@@ -1,0 +1,17 @@
+k,sentence,true_label,predicted_label,category,note
+0,"we root for ( clara and paul ) , even like them , though perhaps it 's an emotion closer to pity .",1,0,mixed_sentiment,"positive framing ('root for', 'like') undercut by 'pity'"
+0,"if you 're hard up for raunchy college humor , this is your ticket right here .",1,0,subtle_intensity,'raunchy'/'hard up' read as negative; sentence is a positive recommendation
+0,"you wo n't like roger , but you will quickly recognize him .",0,1,negation,negated preference 'won't like' overlooked; positive clause dominated
+0,this riveting world war ii moral suspense story deals with the shadow side of american culture : racial prejudice in its ugly and diverse forms .,0,1,mixed_sentiment,'riveting' primes positive; negative subject matter is the true label driver
+0,"does paint some memorable images ... , but makhmalbaf keeps her distance from the characters",1,0,mixed_sentiment,contrast with 'but'; negative clause dominated despite positive gold label
+0,hilariously inept and ridiculous .,1,0,sarcasm,"surface-negative words ('inept', 'ridiculous') framed positively by 'hilariously'"
+3,"we root for ( clara and paul ) , even like them , though perhaps it 's an emotion closer to pity .",1,0,mixed_sentiment,same failure as k=0; shots did not correct it
+3,this riveting world war ii moral suspense story deals with the shadow side of american culture : racial prejudice in its ugly and diverse forms .,0,1,mixed_sentiment,same failure as k=0
+3,"does paint some memorable images ... , but makhmalbaf keeps her distance from the characters",1,0,mixed_sentiment,same failure as k=0
+3,hilariously inept and ridiculous .,1,0,sarcasm,same failure as k=0
+10,"we root for ( clara and paul ) , even like them , though perhaps it 's an emotion closer to pity .",1,0,mixed_sentiment,same failure across all k
+10,fresnadillo 's dark and jolting images have a way of plying into your subconscious like the nightmare you had a week ago that wo n't go away .,1,0,subtle_intensity,"positive review of a horror film; surface words ('dark','nightmare') are praise for effectiveness"
+10,"you wo n't like roger , but you will quickly recognize him .",0,1,negation,same failure as k=0
+10,this riveting world war ii moral suspense story deals with the shadow side of american culture : racial prejudice in its ugly and diverse forms .,0,1,mixed_sentiment,same failure across all k
+10,"does paint some memorable images ... , but makhmalbaf keeps her distance from the characters",1,0,mixed_sentiment,same failure across all k
+10,hilariously inept and ridiculous .,1,0,sarcasm,same failure across all k

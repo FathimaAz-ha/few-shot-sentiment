@@ -1,0 +1,17 @@
+k,seed,index,sentence,true_label,raw_response,predicted_label,status
+0,42,13,"we root for ( clara and paul ) , even like them , though perhaps it 's an emotion closer to pity . ",1,Sentiment: Negative,0,ok
+0,42,66,"if you 're hard up for raunchy college humor , this is your ticket right here . ",1,Sentiment: Negative,0,ok
+0,42,92,"you wo n't like roger , but you will quickly recognize him . ",0,Sentiment: Positive,1,ok
+0,42,95,this riveting world war ii moral suspense story deals with the shadow side of american culture : racial prejudice in its ugly and diverse forms . ,0,Sentiment: Positive,1,ok
+0,42,102,"does paint some memorable images ... , but makhmalbaf keeps her distance from the characters ",1,Sentiment: Negative,0,ok
+0,42,112,hilariously inept and ridiculous . ,1,Sentiment: Negative,0,ok
+3,42,13,"we root for ( clara and paul ) , even like them , though perhaps it 's an emotion closer to pity . ",1,Sentiment: negative,0,ok
+3,42,95,this riveting world war ii moral suspense story deals with the shadow side of american culture : racial prejudice in its ugly and diverse forms . ,0,Sentiment: positive,1,ok
+3,42,102,"does paint some memorable images ... , but makhmalbaf keeps her distance from the characters ",1,Sentiment: negative,0,ok
+3,42,112,hilariously inept and ridiculous . ,1,Sentiment: negative,0,ok
+10,42,13,"we root for ( clara and paul ) , even like them , though perhaps it 's an emotion closer to pity . ",1,Sentiment: negative,0,ok
+10,42,88,fresnadillo 's dark and jolting images have a way of plying into your subconscious like the nightmare you had a week ago that wo n't go away . ,1,Sentiment: negative,0,ok
+10,42,92,"you wo n't like roger , but you will quickly recognize him . ",0,Sentiment: positive,1,ok
+10,42,95,this riveting world war ii moral suspense story deals with the shadow side of american culture : racial prejudice in its ugly and diverse forms . ,0,Sentiment: positive,1,ok
+10,42,102,"does paint some memorable images ... , but makhmalbaf keeps her distance from the characters ",1,Sentiment: negative,0,ok
+10,42,112,hilariously inept and ridiculous . ,1,negative,0,ok

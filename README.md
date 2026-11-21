@@ -1,41 +1,26 @@
-# Few-Shot Prompting for Sentiment Classification on SST-2
+## Error analysis
 
-## Problem
-Does few-shot prompting improve sentiment classification accuracy on SST-2
-relative to a TF-IDF + logistic regression baseline, and how does accuracy
-change as the number of in-context examples increases from 0 to 3 to 10?
+Of 425 valid LLM predictions across the three conditions, 16 were wrong
+(3.8%). By category:
 
-## Data
-- **SST-2** (Stanford Sentiment Treebank v2), loaded via
-  `load_dataset("nyu-mll/glue", "sst2")`.
-- Public benchmark dataset of movie-review sentences.
-- Binary labels: 0 = negative, 1 = positive.
-- Splits used: `train` (for fitting baseline + few-shot pool),
-  `validation` (for model/prompt selection),
-  `test` (reserved — evaluated only once at the end).
+| Category | Count | Share | Example |
+|---|---|---|---|
+| Mixed sentiment / contrast | 9 | 56% | "does paint some memorable images ... , but makhmalbaf keeps her distance from the characters" (true: positive, pred: negative) |
+| Sarcasm / surface-negative praise | 3 | 19% | "hilariously inept and ridiculous ." (true: positive, pred: negative) |
+| Negation | 2 | 12% | "you wo n't like roger , but you will quickly recognize him ." (true: negative, pred: positive) |
+| Subtle intensity | 2 | 12% | "fresnadillo 's dark and jolting images ... like the nightmare you had a week ago" (true: positive, pred: negative) |
 
-## Method
-- **Baseline:** TF-IDF vectorizer (unigrams + bigrams, max_features=10000)
-  + Logistic Regression (max_iter=1000, random_state=42).
-- **Few-shot condition:** [not yet implemented] — will use k ∈ {0, 3, 10}
-  in-context examples sampled from the training split with a fixed seed.
+**Key finding.** Four sentences failed at **every shot count** (k=0, 3, and
+10): the "we root for clara" mixed-sentiment sentence, the "riveting world
+war ii" sentence, the "does paint some memorable images ... but" contrast
+sentence, and the "hilariously inept" sarcasm sentence. Few-shot examples
+did not correct any of these systematic failures — the model fell into the
+same traps regardless of how many examples were in the prompt.
 
-## Results
-| Condition | Val Accuracy | Val Macro-F1 |
-|---|---|---|
-| TF-IDF + LR baseline | <paste your number> | <paste your number> |
-| 0-shot prompt | TBD | TBD |
-| 3-shot prompt | TBD | TBD |
-| 10-shot prompt | TBD | TBD |
-
-Baseline is the number to beat.
-
-## Limitations
-- SST-2 is sentence-level movie reviews; results may not transfer to other domains.
-- Few-shot results will depend on which examples are sampled; multiple seeds
-  will be used to report mean ± SD.
-- Additional limitations to be added as the project progresses.
-
-## Privacy
-All data used is the public SST-2 benchmark. No private or institutional
-records are used or uploaded to any external service.
+This explains why the accuracy differences across k were within the noise
+band: the errors are not random. They are concentrated on a fixed subset
+of sentences whose sentiment depends on contrast, irony, or implicit
+praise/criticism — properties that cannot be taught by a handful of
+sentiment-labelled examples. A benchmark that targets these phenomena
+directly (e.g., contrast/negation subsets, or SST-5 fine-grained labels)
+would be needed to detect a shot-count effect.
