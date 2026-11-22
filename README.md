@@ -38,6 +38,15 @@ change as the number of in-context examples increases from 0 to 3 to 10?
 
 **Shot-count effect:** 0-shot → 3-shot improved accuracy by +1.3 pp, while 0-shot → 10-shot changed it by −0.8 pp. Both differences are well within the ±3% confidence interval for a proportion at n=150. Therefore, this experiment cannot conclude that few-shot examples provide a measurable boost on SST-2.
 
+![Performance Comparison](results/performance_plot.png)
+*Figure 1: Accuracy and Macro-F1 across conditions. The LLM saturates the task at 0-shot.*
+
+![Error Distribution](results/error_distribution.png)
+*Figure 2: Error categories show that ambiguous/mixed sentiment was the primary failure mode.*
+
+![Baseline Confusion Matrix](results/baseline_confusion_matrix.png)
+*Figure 3: The baseline confusion matrix shows it makes a balanced number of false positives and false negatives, unlike the LLM which hits a ceiling.*
+
 ## Error Analysis
 Of 425 valid LLM predictions across the three conditions, only 16 were wrong (3.8%). The dominant error categories were:
 
